@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+        <item android:title="Home"
+                    android:id="@+id/menu_home"
+                    android:icon="@drawable/home_24" />
+        <item android:title="Marketing">
+                <menu>
+                        <group android:checkableBehavior="single">
+                                <item android:title="Affiliate Clients"
+                                    android:icon="@drawable/clients"/>
+                                <item android:title="Emails"
+                                        android:icon="@drawable/marketing_email"/>
+                                <item android:title="Updates"
+                                        android:icon="@drawable/drawer_marketing"/>
+                        </group>
+                </menu>
+        </item>
+
+        <item android:title="Sales">
+                <menu>
+                        <group android:checkableBehavior="single">
+                                <item android:title="Sales Analytics"
+                                    android:icon="@drawable/drawer_analytics"/>
+                                <item android:title="Leadership"
+                                    android:icon="@drawable/drawer_pipeline"/>
+                                <item android:title="Contacts"
+                                    android:icon="@drawable/drawer_contacts"/>
+                        </group>
+                </menu>
+        </item>
+
+        <item android:title="Services">
+                <menu>
+                        <group android:checkableBehavior="single">
+                                <item android:title="Track Requests"
+                                    android:icon="@drawable/drawer_requests"/>
+                                <item android:title="Providers"
+                                    android:icon="@drawable/drawer_pipeline"/>
+                        </group>
+                </menu>
+        </item>
+
+
+    
+</menu>

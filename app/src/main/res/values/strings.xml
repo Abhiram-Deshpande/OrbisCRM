@@ -12,4 +12,12 @@
     <string name="title_activity_trash">Trash</string>
     <string name="open_drawer">Open</string>
     <string name="close_drawer">Close</string>
+    <string name="admin_s_space">Admin\'s space</string>
+    <string name="tech_history">Tech History</string>
+    <string name="critical_reviews">Critical Reviews</string>
+    <string name="task_room">TaskRoom</string>
+    <string name="analytics">Analytics</string>
+    <string name="resolved_emails">Resolved Emails</string>
+    <string name="geographical_reviwes">Geographical Reviwes</string>
+    <string name="chat_room">Chat Room</string>
 </resources>

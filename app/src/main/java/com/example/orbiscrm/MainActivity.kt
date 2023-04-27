@@ -11,6 +11,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import com.example.orbiscrm.databinding.ActivityMainBinding
 import com.example.orbiscrm.drawer_activities.EmailActivity
+import com.example.orbiscrm.main_activities.AnalyticsActivity
+import java.util.Date
 
 class  MainActivity : AppCompatActivity() {
     private lateinit var doYouWantToExit: AlertDialog
@@ -23,8 +25,9 @@ class  MainActivity : AppCompatActivity() {
         setSupportActionBar(layout.mainToolbar)
 
         toggle = ActionBarDrawerToggle(this,layout.mainDrawer,R.string.open_drawer,R.string.close_drawer)
-
         layout.mainDrawer.addDrawerListener(toggle)
+
+
 
     }
 
@@ -32,6 +35,13 @@ class  MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         buildExitDialogue()
+        layout.date.text = layout.date.text.toString()+": Today's date"
+        layout.time.text = layout.time.text.toString()+": Current time"
+        layout.mainScrollView.isVerticalScrollBarEnabled= false
+        layout.analytics.setOnClickListener{
+            var intent = Intent(this,AnalyticsActivity::class.java)
+            startActivity(intent)
+        }
 
     }
     override fun onBackPressed() {
@@ -54,4 +64,5 @@ class  MainActivity : AppCompatActivity() {
         var intent = Intent(this,EmailActivity::class.java)
         startActivity(intent)
     }
+
 }

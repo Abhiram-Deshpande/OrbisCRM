@@ -5,12 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:id="@+id/main_drawer">
+    android:id="@+id/main_drawer"
+    tools:openDrawer="start"
+    android:scrollbarStyle="insideInset"
+    tools:context=".MainActivity">
 
 
 <LinearLayout
 
-    android:id="@+id/drawer_main"
+    android:id="@+id/drawer_main_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_weight="1"
@@ -18,15 +21,23 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/main_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:padding="8dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/main_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:background="@drawable/bcg_toolbar"-->
+<!--        android:elevation="4dp"-->
+<!--        android:padding="8dp"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="OrbisCRM"-->
+<!--            android:fontFamily="@font/roboto"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"/>-->
+<!--    </androidx.appcompat.widget.Toolbar>-->
     <ScrollView
         android:id="@+id/main_scroll_view"
         android:layout_width="match_parent"
@@ -80,7 +91,7 @@
 
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/profile_picture"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -94,7 +105,7 @@
                     android:layout_marginStart="28dp"
                     android:layout_marginBottom="8dp"
                     android:padding="4dp"
-                    android:text="Welcome back,"
+                    android:text="@string/welcome_back"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -109,7 +120,7 @@
                     android:padding="4dp"
                     android:text="Prasad Khurd"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/user_profile_linear_layout" />
@@ -133,6 +144,7 @@
                     app:layout_constraintVertical_bias="0.0">
 
                     <LinearLayout
+                        android:id="@+id/dummy_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -148,7 +160,7 @@
                             app:srcCompat="@drawable/video_call" />
 
                         <TextView
-                            android:id="@+id/dummy1"
+                            android:id="@+id/dummy1_textview"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -176,7 +188,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Dummy2"
+                            android:text="Follow on"
                             android:textSize="10sp" />
                     </LinearLayout>
 
@@ -201,35 +213,9 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Dummy3"
-                            android:textSize="10sp" />
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
-
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="Date: "
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/time"
-                    android:layout_width="58dp"
-                    android:layout_height="17dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="Time: "
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/date" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -496,13 +482,44 @@
                             android:textSize="10sp"
                             android:textStyle="bold" />
                     </LinearLayout>
+                    <LinearLayout
+                        android:onClick="service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_weight="0.33"
+                        android:background="@drawable/bcg_grid_item"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_8" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/happy_monkey"
+                            android:gravity="center"
+                            android:text="@string/admin_s_space"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>
-
-
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/nav_drawer"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header"
+        android:fitsSystemWindows="true"/>
 </androidx.drawerlayout.widget.DrawerLayout>

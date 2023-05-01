@@ -11,6 +11,7 @@
                 <menu>
                         <group android:checkableBehavior="single">
                                 <item android:title="Affiliate Clients"
+                                    
                                     android:icon="@drawable/clients"/>
                                 <item android:title="Emails"
                                         android:icon="@drawable/marketing_email"/>
@@ -44,6 +45,19 @@
                 </menu>
         </item>
 
+        <item android:title="About">
+                <menu>
+                        <group android:checkableBehavior="single">
+                                <item android:title="About Developers"
+                                    android:icon="@drawable/developers"/>
+                                <item android:title="Data Privacy"
+                                    android:icon="@drawable/data_privacy"/>
+                                <item android:title="Sign Out"
+                                    android:icon="@drawable/logout"/>
+                        </group>
+                </menu>
+        </item>
 
-    
+
+
 </menu>

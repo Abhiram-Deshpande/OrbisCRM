@@ -9,7 +9,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="grey">#aaa</color>
     <color name="button_color">#1E573B</color>
+    <color name="main_activity_status_bar_color">#FF5968E5</color>
+    <color name="bcg_tab_layout">#19000000</color>
 
     <color name="yellow">#FFEB3B</color>
     <color name="red">#F44336</color>
+    <color name="transparent">#00FFFFFF</color>
+
 </resources>

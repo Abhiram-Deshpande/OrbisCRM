@@ -29,17 +29,35 @@
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.viewpager2.widget.ViewPager2
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout_email"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/bcg_tab_layout"
+        app:tabIndicatorAnimationDuration="500"
+        app:tabIndicatorAnimationMode="linear"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="4dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/email_recycler_view"
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_email_sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sent" />
+
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/tab_email_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Received"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/email_view_pager"
         android:layout_width="match_parent"
-        android:layout_margin="8dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-      />
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

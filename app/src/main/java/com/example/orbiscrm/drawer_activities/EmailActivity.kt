@@ -2,24 +2,44 @@ package com.example.orbiscrm.drawer_activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.transition.TransitionManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.orbiscrm.R
+import androidx.viewpager.widget.ViewPager
 import com.example.orbiscrm.databinding.ActivityEmailBinding
+import com.example.orbiscrm.drawer_activities.adapters.EmailFragmentsAdapter
+import com.google.android.material.tabs.TabLayout
 
 class EmailActivity : AppCompatActivity() {
     private lateinit var list:ArrayList<EmailDataClass>
     private lateinit var emailAdapter: Adapter
-    private lateinit var layout:com.example.orbiscrm.databinding.ActivityEmailBinding
+    private lateinit var binding:ActivityEmailBinding
+    private lateinit var emailViewPagerAdapter: EmailFragmentsAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        layout = ActivityEmailBinding.inflate(layoutInflater)
-        setContentView(layout.root)
-        setSupportActionBar(layout.myToolbar)
+        binding = ActivityEmailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.myToolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         initialize()
-        emailAdapter = Adapter(this,list)
-        layout.emailRecyclerView.layoutManager = LinearLayoutManager(this)
-        layout.emailRecyclerView.adapter = emailAdapter
+        //emailAdapter = Adapter(this,list)
+//        layout.emailRecyclerView.layoutManager = LinearLayoutManager(this)
+//        layout.emailRecyclerView.adapter = emailAdapter
+
+
+        binding.tablayoutEmail.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                binding.emailViewPager.currentItem = tab!!.position
+
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+        })
+
+
+
 
 
 

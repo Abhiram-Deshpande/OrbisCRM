@@ -35,7 +35,6 @@ class  MainActivity : AppCompatActivity() {
             }
 
             override fun onDrawerOpened(drawerView: View) {
-                Toast.makeText(this@MainActivity,"Drawer opened",Toast.LENGTH_SHORT).show()
             }
 
             override fun onDrawerClosed(drawerView: View) {
@@ -63,6 +62,7 @@ class  MainActivity : AppCompatActivity() {
     }
     override fun onBackPressed() {
         doYouWantToExit.show()
+        if(layout.mainDrawer.isOpen)layout.mainDrawer.closeDrawer(GravityCompat.START)
     }
 
     private fun buildExitDialogue(){

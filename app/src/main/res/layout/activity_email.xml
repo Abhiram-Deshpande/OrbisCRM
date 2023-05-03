@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/aleo"
             android:padding="8dp"
+            android:layout_gravity="center"
             android:text="Emails"
             android:textColor="@color/white"
             android:textSize="20sp"

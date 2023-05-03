@@ -1,15 +1,11 @@
 package com.example.orbiscrm
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.orbiscrm.authentication.LoginActivity
 
 class SplashScreen : AppCompatActivity() {

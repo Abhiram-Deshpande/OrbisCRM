@@ -40,10 +40,10 @@
                                     android:id="@+id/menu_drawer_track_requests"
                                     android:icon="@drawable/drawer_requests"
                                     android:title="Track Requests" />
-                                <item
-                                    android:id="@+id/menu_drawer_providers"
-                                    android:icon="@drawable/drawer_pipeline"
-                                    android:title="Providers" />
+<!--                                <item-->
+<!--                                    android:id="@+id/menu_drawer_providers"-->
+<!--                                    android:icon="@drawable/drawer_pipeline"-->
+<!--                                    android:title="Providers" />-->
                         </group>
                 </menu>
         </item>

@@ -45,8 +45,29 @@ class LoginActivity : AppCompatActivity() {
 //        layout.paswor
 
         if(auth.currentUser!=null) {
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-            finish()
+            var intent = Intent(this@LoginActivity, MainActivity::class.java)
+            var databaseReference = FirebaseDatabase.getInstance().reference.child("users").child(
+                auth.currentUser!!.email?.split(".")?.get(0) ?: "prasadkhurd964@gmail.com"
+            )
+
+            layout.progressBar.visibility = View.VISIBLE
+
+            //intent.putExtra("image_path",databaseReference.))
+//                Toast.makeText(this@LoginActivity,"Children count ${databaseReference.getc}",Toast.LENGTH_SHORT).show()
+
+            databaseReference.addValueEventListener(object:ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    var name = snapshot.child("name").value as String
+                    intent.putExtra("name",name)
+                    layout.progressBar.visibility= View.GONE
+                    startActivity(intent)
+                    finish()
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@LoginActivity,error.message,Toast.LENGTH_SHORT).show()
+                }
+            })
         }
             layout.loginButton.setOnClickListener{
                 login(layout.username.text.trim().toString(),layout.pasword.text.toString().trim())

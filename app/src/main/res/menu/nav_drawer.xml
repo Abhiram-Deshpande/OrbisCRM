@@ -13,9 +13,6 @@
                                 <item android:title="Affiliate Clients"
                                     android:id="@+id/menudrawer__affiliate_clients"
                                     android:icon="@drawable/clients"/>
-                                <item android:title="Emails"
-                                    android:id="@+id/menu_drawer_emails"
-                                        android:icon="@drawable/marketing_email"/>
                                 <item
                                     android:id="@+id/menu_drawer_updates"
                                     android:icon="@drawable/drawer_marketing"

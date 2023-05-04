@@ -18,23 +18,25 @@ import com.example.orbiscrm.drawer_activities.AffiliateClientsActivity
 import com.example.orbiscrm.drawer_activities.CustomerDetailsActivity
 import com.example.orbiscrm.drawer_activities.DeveloperActivity
 import com.example.orbiscrm.drawer_activities.EmailActivity
-import com.example.orbiscrm.drawer_activities.PipelineActivity
+import com.example.orbiscrm.drawer_activities.UpdatesActivity
 import com.example.orbiscrm.main_activities.AdminSpaceActivity
 import com.example.orbiscrm.main_activities.AnalyticsActivity
 import com.example.orbiscrm.main_activities.CallHistoryActivity
 import com.example.orbiscrm.main_activities.CriticalReviewsActivity
 import com.example.orbiscrm.main_activities.FollowOnActivity
 import com.example.orbiscrm.main_activities.MessageHistoryActivity
+import com.example.orbiscrm.main_activities.PaymentsActivity
+import com.example.orbiscrm.drawer_activities.ProvidersActivity
 import com.example.orbiscrm.main_activities.ResolvedEmailActivity
 import com.example.orbiscrm.main_activities.TaskRoomActivity
 import com.example.orbiscrm.main_activities.TechHistoryActicity
+import com.example.orbiscrm.drawer_activities.TrackRequestsActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
-import java.security.AllPermission
 
 class MainActivity : AppCompatActivity() {
     private lateinit var doYouWantToExit: AlertDialog
@@ -134,22 +136,15 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
 
                 R.id.menudrawer__affiliate_clients -> {
-                    Toast.makeText(this,"Affiliate clients selected",Toast.LENGTH_SHORT).show()
                     intent = Intent(this, AffiliateClientsActivity::class.java)
                     layout.mainDrawer.closeDrawer(GravityCompat.START)
                     startActivity(intent)
                      true
                 }
 
-                R.id.menu_drawer_emails -> {
-                    intent = Intent(this, EmailActivity::class.java)
-                    layout.mainDrawer.closeDrawer(GravityCompat.START)
-                    startActivity(intent)
-                     true
-                }
 
                 R.id.menu_drawer_updates -> {
-                    intent = Intent(this, AffiliateClientsActivity::class.java)
+                    intent = Intent(this, UpdatesActivity::class.java)
                     layout.mainDrawer.closeDrawer(GravityCompat.START)
                     startActivity(intent)
                      true
@@ -166,14 +161,14 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.menu_drawer_track_requests -> {
-                    intent = Intent(this, AffiliateClientsActivity::class.java)
+                    intent = Intent(this, TrackRequestsActivity::class.java)
                     layout.mainDrawer.closeDrawer(GravityCompat.START)
                     startActivity(intent)
                      true
                 }
 
                 R.id.menu_drawer_providers -> {
-                    intent = Intent(this, AffiliateClientsActivity::class.java)
+                    intent = Intent(this, ProvidersActivity::class.java)
                     layout.mainDrawer.closeDrawer(GravityCompat.START)
                     startActivity(intent)
                      true
@@ -235,9 +230,6 @@ class MainActivity : AppCompatActivity() {
         layout.newRegistration.setOnClickListener{
         }
 
-        layout.adminSpace.setOnClickListener{
-            startActivity(Intent(this@MainActivity,AdminSpaceActivity::class.java))
-        }
         layout.criticalReviews.setOnClickListener{
             startActivity(Intent(this@MainActivity,CriticalReviewsActivity::class.java))
         }
@@ -250,9 +242,7 @@ class MainActivity : AppCompatActivity() {
         layout.callHistory.setOnClickListener{
             startActivity(Intent(this@MainActivity,CallHistoryActivity::class.java))
         }
-        layout.followOn.setOnClickListener{
-            startActivity(Intent(this@MainActivity,FollowOnActivity::class.java))
-        }
+
         layout.messageHistory.setOnClickListener{
             startActivity(Intent(this@MainActivity,MessageHistoryActivity::class.java))
         }
@@ -262,6 +252,14 @@ class MainActivity : AppCompatActivity() {
             var dialog = newRegistrationdialog.create()
             dialog.setView(layoutInflater.inflate(R.layout.dialog_add_customer_detail,null))
             dialog.show()
+        }
+
+        layout.resolvedEmails.setOnClickListener{
+            startActivity(Intent(this@MainActivity,ResolvedEmailActivity::class.java))
+        }
+
+        layout.payments.setOnClickListener{
+            startActivity(Intent(this@MainActivity,PaymentsActivity::class.java))
         }
 
     }

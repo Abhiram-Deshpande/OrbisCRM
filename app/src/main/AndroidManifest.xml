@@ -15,6 +15,21 @@
         android:theme="@style/Theme.OrbisCRM.NoActionbar"
         tools:targetApi="31">
         <activity
+            android:name=".drawer_activities.TrackRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".drawer_activities.UpdatesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".drawer_activities.TrackRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".drawer_activities.ProvidersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main_activities.PaymentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".main_activities.MessageHistoryActivity"
             android:exported="false" />
         <activity

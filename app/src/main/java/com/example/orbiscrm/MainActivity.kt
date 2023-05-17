@@ -167,12 +167,12 @@ class MainActivity : AppCompatActivity() {
                      true
                 }
 
-                R.id.menu_drawer_providers -> {
-                    intent = Intent(this, ProvidersActivity::class.java)
-                    layout.mainDrawer.closeDrawer(GravityCompat.START)
-                    startActivity(intent)
-                     true
-                }
+//                R.id.menu_drawer_providers -> {
+//                    intent = Intent(this, ProvidersActivity::class.java)
+//                    layout.mainDrawer.closeDrawer(GravityCompat.START)
+//                    startActivity(intent)
+//                     true
+//                }
 
                 R.id.menu_drawer_about_developers -> {
                     intent = Intent(this, DeveloperActivity::class.java)

@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimary"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".authentication.LoginActivity">
 
     <ScrollView
@@ -13,8 +15,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -26,35 +30,61 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="68dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/bcg_login_ll"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:orientation="vertical"
                 android:padding="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-                <EditText
-                    android:id="@+id/username"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="?attr/actionBarSize"
                     android:layout_margin="10dp"
-                    android:ems="10"
                     android:hint="Email"
-                    android:inputType="text"
-                    android:padding="8dp" />
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:counterMaxLength="100"
+                    app:endIconDrawable="@drawable/ic_clear"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:helperText="*Required"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/black"
+                    app:startIconContentDescription="Email"
+                    app:startIconDrawable="@drawable/customer_user">
 
-                <EditText
-                    android:id="@+id/pasword"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="?attr/actionBarSize"
                     android:layout_margin="10dp"
                     android:drawableEnd="@drawable/ic_eye_password"
                     android:ems="10"
                     android:hint="Password"
-                    android:inputType="textPassword"
-                    android:padding="8dp" />
+                    app:endIconDrawable="@drawable/ic_eye_password"
+                    app:endIconMode="password_toggle"
+                    app:startIconDrawable="@drawable/ic_password">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/login_button"
@@ -107,16 +137,6 @@
 
     </ScrollView>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bcg_progress_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
